@@ -18,14 +18,32 @@
                 </div>
                 <div class="form-group col-5">
                         <label>Gender</label>
-                        <select>
-                                <option value="Gender">Gender</option>
-                                <option value="">Male</option>
-                                <option value="">Female</option>
-                                <option value="">others</option>
+                        <select formControlName="gender" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
+                                <!-- <option value="Gender">Gender</option> -->
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="others">others</option>
                               </select>
+                              <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+                                <div *ngIf="f.gender.errors.required">Gender is required</div>
+                            </div>
                 </div>  
-                    <div class="form-group col-5">
+                <div class="form-group col-5">
+                    <div class="form-group ">
+                    <label>DOB</label>
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="dob" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                      <!-- <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">DOB is required</div>
+                    </div> -->
+                    <!-- <input type="text" formControlName="dob" class="form-control"  placeholder="Enter your dob" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" /> -->
+                   
+                </div>
+                </div>
+                    <!-- <div class="form-group col-5">
                     <div class="form-group ">
                     <label>DOB</label>
                     <input type="text" formControlName="dob" class="form-control"  placeholder="Enter your dob" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
@@ -33,7 +51,7 @@
                         <div *ngIf="f.firstName.errors.required">DOB is required</div>
                     </div>
                 </div>
-                </div>
+                </div> -->
                 <div class="form-group col-5">
                     <label>PhoneNumber</label>
                     <input type="text" formControlName="phoneNumber" inputmode="numeric" placeholder="Enter your phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. phoneNumber.errors }" />

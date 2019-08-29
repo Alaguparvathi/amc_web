@@ -1,27 +1,35 @@
 
-<h2 style="text-align:center"  style="font-size:20px;" background-image="assets/img2.jpg">
-    <ul class="nav">
-      <li class="nav-item">
-          <a routerLink="first" routerLinkActive="active">CUSTOMER INFO</a></li>
-      <li class="nav-item">
-          <a routerLink="second" routerLinkActive="active">SERVICE CARD</a></li>
-      <li class="nav-item">
-          <a routerLink="third" routerLinkActive="active">PRODUCT</a></li>
-          <li class="nav-item">
-              <a routerLink="create" routerLinkActive="active">EMPLOYEE DETAILS</a>
-          </li>
-          <li class="nav-item">
-              <a routerLink="parts" routerLinkActive="active">PARTS DETAILS</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="amc-details" routerLinkActive="active">AMC DETAILS</a>
-        </li>
-        <li class="nav-item">
-            <a routerLink="salarydetails" routerLinkActive="active">SALARY DETAILS</a>
-        </li>
-        </ul>
-      
+<!-- <h2 style="text-align:center"  style="font-size:20px;" background-image="assets/img2.jpg"> -->
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+    <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <!-- <button mat-menu-item routerLink="first">CUSTOMER INFO</button>
+      <button mat-menu-item routerLink="second">SERVICE CARD</button>
+      <button mat-menu-item routerLink="third">PRODUCT</button>
+      <button mat-menu-item routerLink="create">EMPLOYEE DETAILS</button>
+      <button mat-menu-item routerLink="parts">PARTS DETAILS</button>
+      <button mat-menu-item routerLink="amc-details">AMC DETAILS</button>
+      <button mat-menu-item routerLink="salarydetails">SALARY DETAILS</button> -->
+
+      <!-- <ul> -->
+      <li mat-menu-item routerLink="first">CUSTOMER INFO</li>
+      <li mat-menu-item routerLink="second">SERVICE CARD</li>
+      <li mat-menu-item routerLink="third">PRODUCT</li>
+      <li mat-menu-item routerLink="create">EMPLOYEE DETAILS</li>
+      <li mat-menu-item routerLink="parts">PARTS DETAILS</li>
+      <li mat-menu-item routerLink="amc-details">AMC DETAILS</li>
+      <li mat-menu-item routerLink="salarydetails">SALARY DETAILS</li>
+    <!-- </ul> -->
  
+    </mat-menu>   
+</mat-toolbar-row>
+</mat-toolbar>
+<!-- </h2> -->
+
+<div>       
  <router-outlet></router-outlet>
-</h2>
+</div>
   

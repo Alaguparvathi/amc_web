@@ -8,7 +8,21 @@
         <div *ngIf="x.id.errors.required">id is required</div>
     </div>
 </div>
-<div class="form-group">
+
+<div class="form-group ">
+        <label>Product Type</label>
+        <select formControlName="producttype" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.producttype.errors }">
+                <option value="classic">classic</option>
+                <option value="RO">RO</option>
+                <option value="MF">MF</option>
+              </select>
+              <div *ngIf="submitted && f.producttype.errors" class="invalid-feedback">
+                <div *ngIf="f.producttype.errors.required">Product type is required</div>
+            </div>
+</div>  
+
+
+<!-- <div class="form-group">
 
  <label>Product Type</label> 
         <select formcontrolname="producttype" class="form-control" [ngClass]="{'is-invalid': submitted && x.producttype.errors}">
@@ -21,7 +35,7 @@
  <div *ngIf="submitted && x.producttype.errors" class="invalid-feedback">
         <div *ngIf="x.producttype.errors.required">producttype is required</div> 
 </div>
-</div>
+</div> -->
 <div class="form-group">
         <label>Customer Id</label>
         <input type="text" formControlName="customerid" class="form-control" [ngClass]="{'is-invalid': submitted && x.customerid.errors}"/>

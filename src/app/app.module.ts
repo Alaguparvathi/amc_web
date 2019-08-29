@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {MatMenuModule, MatIconModule, MatToolbarModule, MatDatepickerModule, MatFormFieldModule, MatNativeDateModule,MatInputModule  } from '@angular/material';
 
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
@@ -16,6 +17,7 @@ import { CreateComponent } from './create/create.component';
 import { AmcDetailsComponent } from './amc-details/amc-details.component';
 import { SalarydetailsComponent } from './salarydetails/salarydetails.component';
 import { NgMultiSelectDropDownModule } from'ng-multiselect-dropdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,10 +36,18 @@ import { NgMultiSelectDropDownModule } from'ng-multiselect-dropdown';
     ReactiveFormsModule,
     NgMultiSelectDropDownModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    MatMenuModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatDatepickerModule,
+    MatNativeDateModule ,
+    MatInputModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule
    
 ],
-  providers: [DbService],
+  providers: [DbService,MatNativeDateModule , MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

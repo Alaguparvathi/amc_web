@@ -15,7 +15,7 @@ export class ThirdComponent implements OnInit {
 
   ngOnInit() {
     this.productDetails=this.formbuilder.group({
-      ProductId:['', Validators.required],
+      productId:['', Validators.required],
       productName:['',[Validators.required,Validators.pattern]],
       productType:['',Validators.required],
       productBrand:['',Validators.required],
@@ -25,10 +25,10 @@ export class ThirdComponent implements OnInit {
       productSize:['',Validators.required],
       productColor:['',Validators.required],
       productWarranty:['',Validators.required],
-      Accessories:['',Validators.required],
+      accessories:['',Validators.required],
       energyConsumption:['',Validators.required],
       productPrice:['',Validators.required],
-      Discount:['',Validators.required],
+      discount:['',Validators.required],
     });
   }
 

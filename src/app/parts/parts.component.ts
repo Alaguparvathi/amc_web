@@ -63,7 +63,7 @@ export class PartsComponent implements OnInit {
             return;
         }
 
-        
+        console.log(this.PartForm.value)
         alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.PartForm.value, null, 4));
     }
 

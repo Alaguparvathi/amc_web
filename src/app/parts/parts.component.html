@@ -13,15 +13,14 @@
                 </div>
                 <div class="form-group col-5"> 
                     <label>Accessories</label>
-                    <ng-multiselect-dropdown
-  [placeholder]="'ChooseSpare'"
-  [data]="dropdownList"
+                    <ng-multiselect-dropdown formControlName="Accessories"  [ngClass]="{ 'is-invalid': submitted && f.Accessories.errors }"
+                        [placeholder]="'ChooseSpare'"
+                        [data]="dropdownList"
 
-  [settings]="dropdownSettings"
-  (onSelect)="onItemSelect($event)"
-  (onSelectAll)="onSelectAll($event)"
->
-</ng-multiselect-dropdown>
+                        [settings]="dropdownSettings"
+                        (onSelect)="onItemSelect($event)"
+                        (onSelectAll)="onSelectAll($event)">
+                        </ng-multiselect-dropdown>
                    
             
                     <!-- <input type="text" formControlName="Accessories" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Accessories.errors }" /> -->

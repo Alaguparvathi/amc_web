@@ -47,6 +47,7 @@ export class FirstComponent implements OnInit {
             return;
         }
 
+        console.log(this.customerDetails.value)
         // display form values on success
         alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.customerDetails.value, null, 4));
         // this.database.getCustomer();
