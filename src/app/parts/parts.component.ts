@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import {DbService} from 'src/app/db.service';
 
 @Component({
   selector: 'app-parts',
@@ -14,7 +14,7 @@ export class PartsComponent implements OnInit {
   selectedItems = [];
   dropdownSettings = {};
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private db:DbService) { }
 
   ngOnInit() {
     this.dropdownList = [
@@ -47,10 +47,6 @@ export class PartsComponent implements OnInit {
       
       Description: ['', Validators.required],
 
-
-
-
-
     });
   }
   get f() { return this.PartForm.controls; }
@@ -65,6 +61,7 @@ export class PartsComponent implements OnInit {
 
         console.log(this.PartForm.value)
         alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.PartForm.value, null, 4));
+        this.db.postSpareParts(this.PartForm.value);
     }
 
     onReset() {

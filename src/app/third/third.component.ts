@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import {DbService} from 'src/app/db.service';
 
 @Component({
   selector: 'app-third',
@@ -11,7 +11,7 @@ export class ThirdComponent implements OnInit {
   productDetails: FormGroup;
   submitted = false; 
 
-  constructor(private formbuilder:FormBuilder ) { }
+  constructor(private formbuilder:FormBuilder, private db:DbService ) { }
 
   ngOnInit() {
     this.productDetails=this.formbuilder.group({
@@ -43,6 +43,7 @@ export class ThirdComponent implements OnInit {
   }
 
   alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.productDetails.value, null, 4));
+  this.db.postProductDetail(this.productDetails.value);
     }
     onReset() {
       this.submitted = false;
