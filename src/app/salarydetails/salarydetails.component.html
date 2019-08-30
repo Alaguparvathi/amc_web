@@ -1,0 +1,59 @@
+        
+ <div class="card m-3">
+    <h5 class="card-header">Salary Details</h5>
+    <div class="card-body">
+        <form [formGroup]="SalaryDetails" (ngSubmit)="onSubmit()">
+            
+                <div class="form-group col-5">
+                    <label>Employee Name</label>
+                    <input type="text" formControlName="employeeName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.employeeName.errors }" />
+                    <div *ngIf="submitted && f.employeeName.errors" class="invalid-feedback">
+                        <div *ngIf="f.employeeName.errors.required">Employee Name is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <label>Employee Id</label>
+                    <input type="text" formControlName="employeeId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.employeeId.errors }" />
+                    <div *ngIf="submitted && f.employeeId.errors" class="invalid-feedback">
+                        <div *ngIf="f.employeeId.errors.required">This filed is required</div>
+                    </div>
+                </div>
+        
+            <div class="form-group col-5">
+                    <label>Account No</label>
+                    <input type="text" formControlName="accountNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.accountNo.errors }" />
+                    <div *ngIf="submitted && f.accountNo.errors" class="invalid-feedback">
+                        <div *ngIf="f.accountNo.errors.required">This filed is required</div>
+                    </div>
+                </div>
+           <div class="form-group col-5">
+                    <label>Account Name</label>
+                    <input type="text" formControlName="accountName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.accountName.errors }" />
+                    <div *ngIf="submitted && f.accountName.errors" class="invalid-feedback">
+                        <div *ngIf="f.accountName.errors.required">This filed is required</div>
+                    </div>
+                </div>
+                
+           
+           <div class="form-group col-5">
+                    <label>Bank Details</label>
+                    <input type="text" formControlName="bankDetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bankDetails.errors }" />
+                    <div *ngIf="submitted && f.bankDetails.errors" class="invalid-feedback">
+                        <div *ngIf="f.bankDetails.errors.required">This filed is required</div>
+                    </div>
+                </div>
+           
+           <div class="form-group col-5">
+                    <label>IFSC</label>
+                    <input type="text" formControlName="IFSC" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.IFSC.errors }" />
+                    <div *ngIf="submitted && f.IFSC.errors" class="invalid-feedback">
+                        <div *ngIf="f.IFSC.errors.required">This filed is required</div>
+                    </div>
+                </div>        
+            <div class="text-center">
+                <button class="btn btn-primary mr-1">Register</button>
+                <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

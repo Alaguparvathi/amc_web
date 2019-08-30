@@ -1,0 +1,60 @@
+
+<div class="card m-3">
+    <div class="card-body">
+        <form [formGroup]="PartForm" (ngSubmit)="onSubmit()">
+        
+                
+                <div class="form-group col-5">
+                    <label>PartID* </label>
+                    <input type="number" inputmode="numeric" formControlName="PartID" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.PartID.errors }" />
+                    <div *ngIf="submitted && f.PartID.errors" class="invalid-feedback">
+                        <div *ngIf="f.PartID.errors.required">PartID is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-5"> 
+                    <label>Accessories</label>
+                    <ng-multiselect-dropdown
+  [placeholder]="'ChooseSpare'"
+  [data]="dropdownList"
+
+  [settings]="dropdownSettings"
+  (onSelect)="onItemSelect($event)"
+  (onSelectAll)="onSelectAll($event)"
+>
+</ng-multiselect-dropdown>
+                   
+            
+                    <!-- <input type="text" formControlName="Accessories" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Accessories.errors }" /> -->
+                    <div *ngIf="submitted && f.Accessories.errors" class="invalid-feedback">
+                        <div *ngIf="f.Accessories.errors.required">Accessories is required</div>
+                    </div>
+                </div>
+            
+            <div class="form-group col-5">
+                <label>SKU</label>
+                <input type="text" formControlName="SKU" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.SKU.errors }" />
+                <div *ngIf="submitted && f.SKU.errors" class="invalid-feedback">
+                    <div *ngIf="f.SKU.errors.required">SKU is required</div>
+                    
+                </div>
+            </div>
+            
+            <div class="form-group col-5">
+                <label>Description</label>
+                <textarea type="text" formControlName="Description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Description.errors }" ></textarea>
+                <div *ngIf="submitted && f.Description.errors" class="invalid-feedback">
+                    <div *ngIf="f.Description.errors.required">Description is required</div>
+                </div>
+            </div>
+           
+           
+            
+            <div class="text-center">
+                <button class="btn btn-primary mr-1">SUBMIT</button>
+                <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+

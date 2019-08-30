@@ -1,0 +1,115 @@
+<div class="card m-3">
+    <div class="card-body">
+        <form [formGroup]="productDetails" (ngSubmit)="onSubmit()">
+           
+    <div class="form-group col-5">
+                    <label>ProductId </label>
+                    <input type="text" formControlName="ProductId"  inputmode="numeric" class="form-control" placeholder="ProductId" [ngClass]="{ 'is-invalid': submitted && f.ProductId.errors }" />
+                    <div *ngIf="submitted && f.ProductId.errors" class="invalid-feedback">
+                        <div *ngIf="f.ProductId.errors.required">ProductId is required</div>
+                    </div>
+                </div>
+                    <div class="form-group col-5">
+                    <label>productName</label>
+                    <input type="text" formControlName="productName" pattern="[A-Za-z]{3}" class="form-control" placeholder="productName" [ngClass]="{ 'is-invalid': submitted && f.productName.errors }" />
+                    <div *ngIf="submitted && f.productName.errors" class="invalid-feedback">
+                        <div *ngIf="f.productName.errors.required">productName is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <label>productType</label>
+                    <input type="text" formControlName="productType" class="form-control"  placeholder="productType" [ngClass]="{ 'is-invalid': submitted && f.productType.errors }" />
+                    <div *ngIf="submitted && f.productType.errors" class="invalid-feedback">
+                        <div *ngIf="f.productType.errors.required">productType is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <div class="form-group ">
+                    <label>productBrand</label>
+                    <input type="text" formControlName="productBrand" class="form-control"  placeholder="productBrand" [ngClass]="{ 'is-invalid': submitted && f.productBrand.errors }" />
+                    <div *ngIf="submitted && f.productBrand.errors" class="invalid-feedback">
+                        <div *ngIf="f.productBrand.errors.required">productBrand is required</div>
+                    </div>
+                </div>
+                </div>
+                <div class="form-group col-5">
+                    <label>productModel</label>
+                    <input type="text" formControlName="productModel"  placeholder="productModel" class="form-control" [ngClass]="{ 'is-invalid': submitted && f. productModel.errors }" />
+                    <div *ngIf="submitted && f.productModel.errors" class="invalid-feedback">
+                        <div *ngIf="f. productModel.errors.required">productModel is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <label>modelNumber</label>
+                    <input type="text" formControlName="modelNumber" class="form-control" placeholder="modelNumber" [ngClass]="{ 'is-invalid': submitted && f. modelNumber.errors }" />
+                    <div *ngIf="submitted && f. modelNumber.errors" class="invalid-feedback">
+                        <div *ngIf="f. modelNumber.errors.required">modelNumber is required</div>
+                    </div>
+                </div>
+               <div class="form-group col-5">
+                <label>productQuantity</label>
+                <input type="text" formControlName="productQuantity" class="form-control"  placeholder="productQuantity" [ngClass]="{ 'is-invalid': submitted && f.productQuantity.errors }" />
+                <div *ngIf="submitted && f.productQuantity.errors" class="invalid-feedback">
+                    <div *ngIf="f.productQuantity.errors.required">productQuantity is required</div>
+                    </div>
+            </div> 
+            <div class="form-group col-5">
+                <label>Address</label>
+                <input type="productSize" formControlName="productSize" class="form-control"  placeholder="productSize" [ngClass]="{ 'is-invalid': submitted && f. productSize.errors }" />
+                <div *ngIf="submitted && f. productSize.errors" class="invalid-feedback">
+                    <div *ngIf="f. productSize.errors.required">Address is required</div>
+                </div>
+            </div>
+          
+            <div class="form-group col-5">
+                <label>productColor</label>
+                <input type="text" formControlName="productColor" class="form-control"  placeholder="productColor" [ngClass]="{ 'is-invalid': submitted && f. productColor.errors }" />
+                <div *ngIf="submitted && f. productColor.errors" class="invalid-feedback">
+                    <div *ngIf="f. productColor.errors.required">productColor is required</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>productWarranty</label>
+                <input type="text" formControlName="productWarranty" class="form-control"  placeholder="productWarranty" [ngClass]="{ 'is-invalid': submitted && f. productWarranty.errors }" />
+                <div *ngIf="submitted && f. productWarranty.errors" class="invalid-feedback">
+                    <div *ngIf="f. productWarranty.errors.required">productWarranty is required</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>Accessories</label>
+                <input type="text" formControlName="Accessories" class="form-control"  placeholder="Accessories" [ngClass]="{ 'is-invalid': submitted && f. Accessories.errors }" />
+                <div *ngIf="submitted && f. Accessories.errors" class="invalid-feedback">
+                    <div *ngIf="f. Accessories.errors.required">  Accessories is required</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>energyConsumption</label>
+                <input type="text" formControlName="energyConsumption" class="form-control"  placeholder="energyConsumption" [ngClass]="{ 'is-invalid': submitted && f. energyConsumption.errors }" />
+                <div *ngIf="submitted && f. energyConsumption.errors" class="invalid-feedback">
+                    <div *ngIf="f. energyConsumption.errors.required">energyConsumption is required</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>productPrice</label>
+                <input type="text" formControlName="productPrice" class="form-control"  placeholder="productPrice" [ngClass]="{ 'is-invalid': submitted && f. productPrice.errors }" />
+                <div *ngIf="submitted && f. productPrice.errors" class="invalid-feedback">
+                    <div *ngIf="f. productPrice.errors.required">productPrice is required</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>Accessories</label>
+                <input type="text" formControlName="Discount" class="form-control"  placeholder="Discount" [ngClass]="{ 'is-invalid': submitted && f. Discount.errors }" />
+                <div *ngIf="submitted && f. Discount.errors" class="invalid-feedback">
+                    <div *ngIf="f. Discount.errors.required">Discount is required</div>
+                </div>
+            </div>
+           
+           
+            <div class>      
+                <button class="btn btn-primary mr-1">Submit</button>
+                <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button></div>
+            
+        </form>
+    </div>
+    </div>
+

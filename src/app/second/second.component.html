@@ -1,0 +1,80 @@
+<div class="card m-3">
+    <div class="card-body">
+        <form [formGroup]="ServiceDetails" (ngSubmit)="onSubmit()">
+           
+    <div class="form-group col-5">
+                    <label>CustomerId</label>
+                    <input type="text" formControlName="CustomerId" class="form-control" placeholder="CustomerId" [ngClass]="{ 'is-invalid': submitted && f.CustomerId.errors }" />
+                    <div *ngIf="submitted && f.CustomerId.errors" class="invalid-feedback">
+                        <div *ngIf="f.CustomerId.errors.required">CustomerId is required</div>
+                    </div>
+                </div>
+                    <div class="form-group col-5">
+                    <label>Date</label>
+                    <input type="text" formControlName="Date" class="form-control" placeholder="Date" [ngClass]="{ 'is-invalid': submitted && f.Date.errors }" />
+                    <div *ngIf="submitted && f.Date.errors" class="invalid-feedback">
+                        <div *ngIf="f.Date.errors.required">Date  is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <label>Complaint</label>
+                    <input type="text" formControlName="Complaint" class="form-control"  placeholder="Complaint" [ngClass]="{ 'is-invalid': submitted && f.Complaint.errors }" />
+                    <div *ngIf="submitted && f.Complaint.errors" class="invalid-feedback">
+                        <div *ngIf="f.Complaint.errors.required">Complaint  is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <div class="form-group ">
+                    <label>SparesReplaced</label>
+                    <input type="text" formControlName="SparesReplaced" class="form-control"  placeholder="SparesReplaced" [ngClass]="{ 'is-invalid': submitted && f.SparesReplaced.errors }" />
+                    <div *ngIf="submitted && f.SparesReplaced.errors" class="invalid-feedback">
+                        <div *ngIf="f.SparesReplaced.errors.required">SparesReplaced is required</div>
+                    </div>
+                </div>
+                </div>
+                <div class="form-group col-5">
+                    <label>Amount</label>
+                    <input type="text" formControlName="Amount" class="form-control" placeholder="Amount" [ngClass]="{ 'is-invalid': submitted && f. Amount.errors }" />
+                    <div *ngIf="submitted && f. Amount.errors" class="invalid-feedback">
+                        <div *ngIf="f. Amount.errors.required">Amount is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <label>Remarks</label>
+                    <input type="text" formControlName="Remarks" class="form-control"  placeholder="Remarks" [ngClass]="{ 'is-invalid': submitted && f. Remarks.errors }" />
+                    <div *ngIf="submitted && f. Remarks.errors" class="invalid-feedback">
+                        <div *ngIf="f. Remarks.errors.required">Remarks is required</div>
+                    </div>
+                </div>
+               
+            <div class="form-group col-5">
+                <label>ServicedBy</label>
+                <input type="text" formControlName="ServicedBy" class="form-control"  placeholder="ServicedBy" [ngClass]="{ 'is-invalid': submitted && f. ServicedBy.errors }" />
+                <div *ngIf="submitted && f. ServicedBy.errors" class="invalid-feedback">
+                    <div *ngIf="f. ServicedBy.errors.required">ServicedBy is required</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label>CustomerSignature</label>
+                <input type="text" formControlName="CustomerSignature" class="form-control"  placeholder="Enter CustomerSignature" [ngClass]="{ 'is-invalid': submitted && f. CustomerSignature.errors }" />
+                <div *ngIf="submitted && f. CustomerSignature.errors" class="invalid-feedback">
+                    <div *ngIf="f. CustomerSignature.errors.required">CustomerSignature is required</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label><b>CustomerFeedback</b></label>
+                <input type="text" formControlName="CustomerFeedback" class="form-control"  placeholder="Enter CustomerFeedback" [ngClass]="{ 'is-invalid': submitted && f. CustomerFeedback.errors }" />
+                <div *ngIf="submitted && f. CustomerFeedback.errors" class="invalid-feedback">
+                    <div *ngIf="f. CustomerFeedback.errors.required">CustomerFeedback is required</div>
+                  
+                </div>
+            </div>
+           
+            <div class>      
+                <button class="btn btn-primary mr-1">Submit</button>
+                <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button></div>
+            
+        </form>
+    </div>
+    </div>
+

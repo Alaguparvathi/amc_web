@@ -1,0 +1,67 @@
+<div class="container">
+    <h6>AMC DETAILS</h6>
+<form [formGroup]="amcdetails" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>ID</label>
+        <input type="text" formControlName="id" class="form-control" [ngClass]="{'is-invalid':submitted && x.id.errors}"/>
+    <div *ngIf="submitted && x.id.errors" class="invalid-feedback">
+        <div *ngIf="x.id.errors.required">id is required</div>
+    </div>
+</div>
+<div class="form-group">
+
+ <label>Product Type</label> 
+        <select formcontrolname="producttype" class="form-control" [ngClass]="{'is-invalid': submitted && x.producttype.errors}">
+<option value=""></option>
+<option value="classic">Classic</option>
+<option value="ro">RO</option>
+<option value="mf">MF</option>
+<option>UF</option>
+ </select>        
+ <div *ngIf="submitted && x.producttype.errors" class="invalid-feedback">
+        <div *ngIf="x.producttype.errors.required">producttype is required</div> 
+</div>
+</div>
+<div class="form-group">
+        <label>Customer Id</label>
+        <input type="text" formControlName="customerid" class="form-control" [ngClass]="{'is-invalid': submitted && x.customerid.errors}"/>
+        <div *ngIf="submitted && x.customerid.errors" class="invalid-feedback">
+               <div *ngIf="x.customerid.errors.required">customerid is required</div> 
+       </div>
+       </div>
+
+       <div class="form-group">
+            <label>Date</label>
+            <input type="date" formControlName="date" class="form-control" [ngClass]="{'is-invalid': submitted && x.date.errors}"/>
+            <div *ngIf="submitted && x.date.errors" class="invalid-feedback">
+                   <div *ngIf="x.date.errors.required">date is required</div> 
+           </div>
+           </div>
+           <div class="form-group">
+                <label>Time Period</label>
+                <input type="number" formControlName="timeperiod" class="form-control" [ngClass]="{'is-invalid': submitted && x.timeperiod.errors}"/>
+                <div *ngIf="submitted && x.timeperiod.errors" class="invalid-feedback">
+                       <div *ngIf="x.timeperiod.errors.required">Timeperiod is required</div> 
+                    </div>
+                    </div>
+                    <div class="form-group">
+                            <label>Price</label>
+                            <input type="number" formControlName="price" class="form-control" [ngClass]="{'is-invalid': submitted && x.price.errors}"/>
+                            <div *ngIf="submitted && x.price.errors" class="invalid-feedback">
+                                   <div *ngIf="x.price.errors.required">Price is required</div> 
+                                </div>
+                                </div>
+                                <div class="form-group">
+                                        <label>Discount</label>
+                                        <input type="number" formControlName="discount" class="form-control" [ngClass]="{'is-invalid': submitted && x.discount.errors}"/>
+                                        <div *ngIf="submitted && x.discount.errors" class="invalid-feedback">
+                                               <div *ngIf="x.discount.errors.required">Discount is required</div> 
+                                            </div>
+                                            </div>
+
+<div class="form-group">
+    <button class="btn btn-primary">Register</button>
+</div>
+           
+</form>
+</div>
