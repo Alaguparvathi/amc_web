@@ -50,15 +50,17 @@ export class FirstComponent implements OnInit {
         console.log(this.customerDetails.value)
         // display form values on success
         alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.customerDetails.value, null, 4));
-        // this.database.getCustomer();
-        // this.database.postCustomer(this.customerDetails.value);
-        this.db.postCustomerDetail(this.customerDetails.value);
+
+        this.db.postCustomerDetail(this.customerDetails.value).subscribe(response => {
+            console.log("response", response)
+            // this.customerDetails.reset();
+            this.customerDetails.clearValidators();
+        });
     }
 
     onReset() {
         this.submitted = false;
         this.customerDetails.reset();
-        
     }
 }
 

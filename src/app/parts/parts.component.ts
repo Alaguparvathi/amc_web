@@ -41,7 +41,7 @@ export class PartsComponent implements OnInit {
     };
     this.PartForm = this.formBuilder.group({
     
-      PartID: ['', Validators.required],
+      // PartID: ['', Validators.required],
       Accessories: ['', Validators.required],
       SKU: ['', Validators.required],
       
@@ -52,8 +52,8 @@ export class PartsComponent implements OnInit {
   get f() { return this.PartForm.controls; }
 
     onSubmit() {
-        this.submitted = true;
 
+        this.submitted = true;
         
         if (this.PartForm.invalid) {
             return;
@@ -61,13 +61,17 @@ export class PartsComponent implements OnInit {
 
         console.log(this.PartForm.value)
         alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.PartForm.value, null, 4));
-        this.db.postSpareParts(this.PartForm.value);
+        this.db.postSpareParts(this.PartForm.value)
+        .subscribe(response => {
+          console.log("Response", response)
+        });
     }
 
     onReset() {
         this.submitted = false;
         this.PartForm.reset();
     }
+
     onItemSelect(item: any) {
       console.log(item);
     }

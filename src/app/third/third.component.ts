@@ -15,20 +15,20 @@ export class ThirdComponent implements OnInit {
 
   ngOnInit() {
     this.productDetails=this.formbuilder.group({
-      productId:['', Validators.required],
+      // productId:['', Validators.required],
       productName:['',[Validators.required,Validators.pattern]],
       productType:['',Validators.required],
       productBrand:['',Validators.required],
-      productModel:['',Validators.required],
-      modelNumber:['',Validators.required],
-      productQuantity:['',Validators.required],
-      productSize:['',Validators.required],
+      // productModel:['',Validators.required],
+      // modelNumber:['',Validators.required],
+      // productQuantity:['',Validators.required],
+      // productSize:['',Validators.required],
       productColor:['',Validators.required],
-      productWarranty:['',Validators.required],
-      accessories:['',Validators.required],
-      energyConsumption:['',Validators.required],
-      productPrice:['',Validators.required],
-      discount:['',Validators.required],
+      // productWarranty:['',Validators.required],
+      // accessories:['',Validators.required],
+      // energyConsumption:['',Validators.required],
+      // productPrice:['',Validators.required],
+      // discount:['',Validators.required],
     });
   }
 
@@ -36,19 +36,25 @@ export class ThirdComponent implements OnInit {
 
   onSubmit() {
 
-  this.submitted = true;
+    this.submitted = true;
 
-    if (this.productDetails.invalid) {
-    return;
-  }
-
-  alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.productDetails.value, null, 4));
-  this.db.postProductDetail(this.productDetails.value);
+      if (this.productDetails.invalid) {
+      return;
     }
-    onReset() {
-      this.submitted = false;
-      this.productDetails.reset();
+
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.productDetails.value, null, 4));
+
+    this.db.postProductDetail(this.productDetails.value)
+    .subscribe(response => {
+      console.log("Response", response)
+    });
   }
+
+  onReset() {
+    this.submitted = false;
+    this.productDetails.reset();
+  }
+  
 }
 
 
